@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>CampusHelper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>🎓 CampusHelper</h1>
-        <p>Your College Life Made Easy</p>
-    </header>
+<header>
+    <h1>🎓 CampusHelper</h1>
+    <p>Your College Life Made Easy</p>
+    <br>
+    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+</header>
 
-    <section class="tools">
-        <div class="card">
-            <h2>📊 CGPA Calculator</h2>
+<section class="tools">
 
-<input type="number" id="sub1" placeholder="Subject 1 Marks">
-<input type="number" id="sub2" placeholder="Subject 2 Marks">
-<input type="number" id="sub3" placeholder="Subject 3 Marks">
-<input type="number" id="sub4" placeholder="Subject 4 Marks">
-<input type="number" id="sub5" placeholder="Subject 5 Marks">
+    <!-- CGPA CALCULATOR -->
+    <div class="card">
+        <h2>📊 CGPA Calculator</h2>
 
-<br><br>
-<button onclick="calculateCGPA()">Calculate CGPA</button>
+        <input type="number" id="sub1" placeholder="Subject 1 Marks"><br><br>
+        <input type="number" id="sub2" placeholder="Subject 2 Marks"><br><br>
+        <input type="number" id="sub3" placeholder="Subject 3 Marks"><br><br>
+        <input type="number" id="sub4" placeholder="Subject 4 Marks"><br><br>
+        <input type="number" id="sub5" placeholder="Subject 5 Marks"><br><br>
 
-<h3 id="result"></h3>
-        </div>
+        <button onclick="calculateCGPA()">Calculate CGPA</button>
+        <h3 id="result"></h3>
+    </div>
 
-        <div class="card">
-            <h2>🗓 Timetable Maker</h2>
-            <p>Create your weekly class timetable.</p>
-        </div>
+    <!-- TIMETABLE MAKER -->
+    <div class="card">
+        <h2>🗓 Timetable Maker</h2>
 
-        <div class="card">
-            <h2>⏰ Study Planner</h2>
-            <p>Plan your daily study schedule.</p>
-        </div>
+        <input type="text" id="mon" placeholder="Monday Subject"><br><br>
+        <input type="text" id="tue" placeholder="Tuesday Subject"><br><br>
+        <input type="text" id="wed" placeholder="Wednesday Subject"><br><br>
+        <input type="text" id="thu" placeholder="Thursday Subject"><br><br>
+        <input type="text" id="fri" placeholder="Friday Subject"><br><br>
 
-        <div class="card">
-            <h2>📚 Notes Section</h2>
-            <p>Access useful study notes.</p>
-        </div>
-    </section>
+        <button onclick="createTimetable()">Create Timetable</button>
+        <h3 id="timetableResult"></h3>
+    </div>
+
+    <!-- STUDY PLANNER -->
+    <div class="card">
+        <h2>⏰ Study Planner</h2>
+
+        <input type="text" id="task" placeholder="Enter Study Task"><br><br>
+        <input type="time" id="time"><br><br>
+
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- NOTES SECTION -->
+    <div class="card">
+        <h2>📚 Notes Section</h2>
+
+        <textarea id="noteInput" 
+                  placeholder="Write your notes here..." 
+                  rows="4"></textarea><br><br>
+
+        <button onclick="saveNote()">Save Note</button>
+
+        <ul id="notesList"></ul>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
